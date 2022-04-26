@@ -12,6 +12,7 @@
 
 ### installation :
 > Open CLI
-- cd 'project folder name' (for windows OS )
+- cd 'project folder name'
+  - for windows OS
 - npm install
 - npm run dev
