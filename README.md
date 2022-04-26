@@ -1,4 +1,4 @@
-# React-AuthenticationApp
+# React AuthenticationApp
 
 ### Tools built with :
 - React 
