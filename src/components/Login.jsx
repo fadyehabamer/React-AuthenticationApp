@@ -5,11 +5,13 @@ function Login() {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
 
     const authContextObject = useContext(AuthContext)
 
     const login = (e) => {
         e.preventDefault();
+        setError('')
         if (password.length > 8 && email.length > 0 && email.includes('@') && email.includes('.')) {
             const token = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
             localStorage.setItem('token', token)
@@ -19,14 +21,14 @@ function Login() {
                 token
             })
         } else {
-            alert('Login failed , check your email or password')
+            setError('Login failed, check your email or password')
         }
 
     }
 
 
     return (
-        <form className="my-3 container">
+        <form className="my-3 container" onSubmit={login} noValidate>
             <h2 className='my-3'>
                 Login
             </h2>
@@ -37,9 +39,11 @@ function Login() {
             </div>
             <div className="mb-3">
                 <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                <input type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} id="exampleInputPassword1" />
+                <input type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} id="exampleInputPassword1" aria-describedby="passwordHelp" />
+                <div id="passwordHelp" className="form-text">Must be at least 9 characters.</div>
             </div>
-            <button type="submit" className="btn btn-dark" onClick={login}>Submit</button>
+            {error && <div className="alert alert-danger" role="alert">{error}</div>}
+            <button type="submit" className="btn btn-dark">Submit</button>
         </form>
     )
 }
