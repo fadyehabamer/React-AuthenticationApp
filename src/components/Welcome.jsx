@@ -7,7 +7,7 @@ function Welcome() {
         <h2>
             Welcome to the app
         </h2>
-        <img src={topSecretImage} alt="img" style={{width:'200px' , height:'200px' , objectFit:'cover'}} />
+        <img src={topSecretImage} alt="Red &quot;Top secret, confidential&quot; stamp" style={{width:'200px' , height:'200px' , objectFit:'cover'}} />
     </div>
   )
 }
