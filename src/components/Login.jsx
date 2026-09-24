@@ -5,6 +5,7 @@ function Login() {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [showPassword, setShowPassword] = useState(false)
     const [error, setError] = useState('')
 
     const authContextObject = useContext(AuthContext)
@@ -39,7 +40,12 @@ function Login() {
             </div>
             <div className="mb-3">
                 <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                <input type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} id="exampleInputPassword1" aria-describedby="passwordHelp" />
+                <div className="input-group">
+                    <input type={showPassword ? 'text' : 'password'} className="form-control" value={password} onChange={e => setPassword(e.target.value)} id="exampleInputPassword1" aria-describedby="passwordHelp" autoComplete="current-password" />
+                    <button type="button" className="btn btn-outline-secondary" onClick={() => setShowPassword(shown => !shown)} aria-controls="exampleInputPassword1" aria-label={showPassword ? 'Hide password' : 'Show password'}>
+                        {showPassword ? 'Hide' : 'Show'}
+                    </button>
+                </div>
                 <div id="passwordHelp" className="form-text">Must be at least 9 characters.</div>
             </div>
             {error && <div className="alert alert-danger" role="alert">{error}</div>}
