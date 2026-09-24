@@ -16,7 +16,7 @@
 A small demo of sharing login state across components with React Context.
 Logging in with any valid-looking email and a password of at least 9
 characters stores the email and a random placeholder token in `localStorage`;
-logging out clears them.
+logging out clears them. The password field has a Show/Hide toggle.
 
 > **This is not real authentication.** There is no backend: the "token" is a
 > random string generated in the browser and the "secret" page is shipped in
@@ -25,7 +25,7 @@ logging out clears them.
 > keep session tokens out of `localStorage` (e.g. in `HttpOnly` cookies).
 
 ### Getting started
-Requires Node.js 12.2+ (verified with Node 24).
+Requires Node.js 20.19+ or 22.12+ (verified with Node 24).
 
 ```bash
 npm install
@@ -38,3 +38,4 @@ npm run dev
 | `npm run dev` | Start the Vite dev server |
 | `npm run build` | Production build into `dist/` |
 | `npm run preview` | Serve the production build locally |
+| `npm test` | Run the Vitest test suite |
