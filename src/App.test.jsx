@@ -45,4 +45,17 @@ describe('App', () => {
     expect(screen.getByText('saved@example.com')).toBeTruthy()
   })
 
+  it('toggles password visibility', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+    const password = screen.getByLabelText('Password')
+    const toggle = screen.getByRole('button', { name: 'Show password' })
+    expect(password.getAttribute('type')).toBe('password')
+
+    await user.click(toggle)
+    expect(password.getAttribute('type')).toBe('text')
+
+    await user.click(screen.getByRole('button', { name: 'Hide password' }))
+    expect(password.getAttribute('type')).toBe('password')
+  })
 })
