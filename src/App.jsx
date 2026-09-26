@@ -1,11 +1,11 @@
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import './App.css'
 
 import Header from './components/Header'
 import Login from './components/Login'
 import Welcome from './components/Welcome'
 
-import { AuthContext } from './context/AuthContext'
+import { AuthContext } from './context/auth'
 import AuthProvider from './context/AuthContext'
 
 function App() {

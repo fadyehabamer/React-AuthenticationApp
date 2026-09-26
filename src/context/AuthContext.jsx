@@ -1,8 +1,5 @@
-import React, { useState } from "react";
-
-
-export const AuthContext = React.createContext();
-AuthContext.displayName = 'AuthContext'
+import { useState } from "react";
+import { AuthContext } from "./auth";
 
 const readStoredAuth = () => {
     try {

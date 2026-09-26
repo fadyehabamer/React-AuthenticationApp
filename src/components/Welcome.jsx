@@ -1,4 +1,3 @@
-import React from 'react'
 import topSecretImage from '../assets/TS.jpg'
 
 function Welcome() {
