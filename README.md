@@ -1,5 +1,7 @@
 # React Authentication App
 
+[![CI](https://github.com/fadyehabamer/React-AuthenticationApp/actions/workflows/ci.yml/badge.svg)](https://github.com/fadyehabamer/React-AuthenticationApp/actions/workflows/ci.yml)
+
 ### Tools built with :
 
 - React 
